@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link href = "css/bootstrap.css" rel = "stylesheet"/>
+  <link href = "css/bootstrap.min.css" rel = "stylesheet"/>
+  </head>
+  <body>
+      <div th:replace="fragments/header :: header">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Static header</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-unit">
+        <h1>BHB</h1>
+        <p>
+    <div align="center">
+    <h2>Registration Succeeded!</h2>
+    <span>Title:</span><span th:text="${acc.title}"></span><br/>
+    <span>First name:</span><span th:text="${acc.name}"></span><br/>
+    <span>E-mail:</span><span th:text="${acc.email}"></span><br/>
+    <span>Password:</span><span th:text="${acc.password}"></span><br/>
+    <span>Gender:</span><span th:text="${acc.gender}"></span><br/>
+    <span>Profession:</span><span th:text="${acc.profession}"></span><br/>
+    <span>Married?</span><span th:text="${acc.married}"></span><br/>
+    <span>Note:</span><span th:text="${acc.note}"></span><br/>
+</div>
+        </p>
+        <p>
+          <a href="/signup" th:href="@{/signup}" class="btn btn-large btn-success">Sign up</a>
+        </p>
+      </div>
+      <div th:replace="fragments/footer :: footer">&copy; 2020 The Shitty Year</div>
+    </div>
+    ...
+  </body>
+</html>
