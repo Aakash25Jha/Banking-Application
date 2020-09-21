@@ -1,36 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href = "css/bootstrap.css" rel = "stylesheet"/>
-  <link href = "css/bootstrap.min.css" rel = "stylesheet"/>
   </head>
   <body>
       <div th:replace="fragments/header :: header">
-      <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Static header</a>
-          </div>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
-    <form action="/home" th:action="@{/seedstartermng}" th:object="${seedStarter}" method="post">
-    <input type="text" th:field="*{title}"/>
-    <input type="text" th:field="*{firstname}"/>
-    <input type="text" th:field="*{lastname}"/>
-    <input type="text" th:field="*{fathersname}"/>
-    <input type="number" th:field="*{mobilenumber}"/>
-    <input type="email" th:field="*{email}"/>
-    <input type="number" th:field="*{aadhar}"/>
-    <input type="date" th:field="*{dob}"/>
-    <input type="text" th:field="*{address}"/>
-    <input type="text" th:field="*{city}"/>
-    <input type="text" th:field="*{accnumber}"/>
+    <form action="#" th:action="@{/openAcc}" th:object="${openAccount}" method="post">
+    <label>Mr.<input type="radio" th:field="*{title}" value="Mr."/></label>
+    <label>Mrs.<input type="radio" th:field="*{title}" value="Mrs."/>
+    <label>First Name<input type="text" th:field="*{firstname}"/>
+    <label>Middle Name<input type="text" th:field="*{middlename}"/>
+    <label>Last Name<input type="text" th:field="*{lastname}"/>
+    <label>Father's Name<input type="text" th:field="*{fathersname}"/>
+    <label>Mobile<input type="number" th:field="*{mobile}"/>
+    <label>Email Id<input type="email" th:field="*{email}"/>
+    <label>Aadhar Number<input type="number" th:field="*{aadhar}"/>
+    <label>Date Of Birth<input type="date" th:field="*{dob}"/>
+    <label>Address<input type="text" th:field="*{address}"/>
+    <label>City<input type="text" th:field="*{city}"/>
 	<input type="submit" value="Submit"/>
 	</form>
  </div>
