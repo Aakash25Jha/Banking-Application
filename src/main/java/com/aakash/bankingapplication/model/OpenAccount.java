@@ -14,6 +14,9 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,7 +32,6 @@ public class OpenAccount {
 	@Column(name="id")
 	private int id;
 	@Column(name="title")
-	@NotEmpty(message = "Please provide your title/TITLE KIDHAR HAI?")
 	private String title;
 	@Column(name="first_name")
 	@NotEmpty(message = "Please provide your First Name")
@@ -46,7 +48,7 @@ public class OpenAccount {
 	@Min(10)
 	@Max(10)
 	@NotEmpty(message = "Please provide your mobile Number")
-	private int mobile;
+	private String mobile;
 	@Column(name="email_id")
 	@Email(message = "Please provide a valid e-mail")
 	@NotEmpty(message = "Please provide your email Id")
@@ -58,7 +60,8 @@ public class OpenAccount {
 	@Column(name="dob")
 	@Past
 	@NotEmpty(message = "Please provide your Birth date")
-	private Date dob;
+	@DateTimeFormat(pattern="dd/mm/yyyy")
+	private String dob;
 	@Column(name="address")
 	private String address;
 	@Column(name="city")

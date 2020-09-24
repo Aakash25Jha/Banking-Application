@@ -1,24 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
 </head>
   <body>
-      <div th:replace="fragments/header :: header">
-    </div>
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">BHB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/openAcc">OpenAccount</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Net Banking
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/login">login</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">About Us</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="logout">Logout</button>
+    </form>
+  </div>
+</nav> <div class="container">
       <div class="hero-unit">
         <h1>BHB</h1>
         <p>
-    <div align="center">
+<div align="center">
     <h2>Registration Succeeded!</h2>
     <span>Title:</span><span th:text="${acc.title}"></span><br/>
-    <span>First name:</span><span th:text="${acc.name}"></span><br/>
+    <span>First name:</span><span th:text="${acc.firstname}"></span><br/>
+    <span>Middle name:</span><span th:text="${acc.middlename}"></span><br/>
+    <span>Last name:</span><span th:text="${acc.lastname}"></span><br/>
+    <span>Father's name:</span><span th:text="${acc.fathersname}"></span><br/>
+    <span>Mobile:</span><span th:text="${acc.mobile}"></span><br/>
     <span>E-mail:</span><span th:text="${acc.email}"></span><br/>
-    <span>Password:</span><span th:text="${acc.password}"></span><br/>
-    <span>Gender:</span><span th:text="${acc.gender}"></span><br/>
-    <span>Profession:</span><span th:text="${acc.profession}"></span><br/>
-    <span>Married?</span><span th:text="${acc.married}"></span><br/>
-    <span>Note:</span><span th:text="${acc.note}"></span><br/>
+    <span>Aadhar:</span><span th:text="${acc.aadhar}"></span><br/>
+    <span>Date of Birth:</span><span th:text="${acc.dob}"></span><br/>
+    <span>Address:</span><span th:text="${acc.address}"></span><br/>
+    <span>City:</span><span th:text="${acc.city}"></span><br/>
+    <span>Account Number:</span><span th:text="${accountNumber}"></span><br/>
 </div>
         </p>
         <p>

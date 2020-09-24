@@ -1,4 +1,6 @@
 package com.aakash.bankingapplication.controller;
+import java.util.Random;
+
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,8 +27,14 @@ public class MainController {
 	@PostMapping(value="/openAcc")
 	public ModelAndView submitOpenAcc(@ModelAttribute OpenAccount openAccount,BindingResult binding) {
 		ModelAndView mav= new ModelAndView("user-data");
+		Random random=new Random();
+		String prefix="AC";
+		for(int accno=0;accno<14;accno++) {
+			int digits=random.nextInt(10);
+			prefix += Integer.toString(digits);
+		}
+		mav.addObject("accountNumber", prefix);
 		mav.addObject("acc", openAccount);
-		return mav;
-		
+		return mav;	
 	}
 }
