@@ -1,7 +1,5 @@
 package com.aakash.bankingapplication.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,15 +16,118 @@ import javax.validation.constraints.Past;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 @Entity
 @Table(name="open_account")
-@Data
 public class OpenAccount {
+	public OpenAccount() {}
+	public OpenAccount(int id, String title, @NotEmpty(message = "Please provide your First Name") String firstname,
+			String middlename, @NotEmpty(message = "Please provide your Last Name") String lastname,
+			@NotEmpty(message = "Please provide your Father's Name") String fathersname,
+			@Min(10) @Max(10) @NotEmpty(message = "Please provide your mobile Number") String mobile,
+			@Email(message = "Please provide a valid e-mail") @NotEmpty(message = "Please provide your email Id") String email,
+			@NotEmpty(message = "Please provide your Aadhar Number") @NotNull String aadhar,
+			@Past @NotEmpty(message = "Please provide your Birth date") String dob, String address, String city,
+			@NotNull String accno) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.firstname = firstname;
+		this.middlename = middlename;
+		this.lastname = lastname;
+		this.fathersname = fathersname;
+		this.mobile = mobile;
+		this.email = email;
+		this.aadhar = aadhar;
+		this.dob = dob;
+		this.address = address;
+		this.city = city;
+		this.accno = accno;
+	}
+	@Override
+	public String toString() {
+		return "OpenAccount [id=" + id + ", title=" + title + ", firstname=" + firstname + ", middlename=" + middlename
+				+ ", lastname=" + lastname + ", fathersname=" + fathersname + ", mobile=" + mobile + ", email=" + email
+				+ ", aadhar=" + aadhar + ", dob=" + dob + ", address=" + address + ", city=" + city + ", accno=" + accno
+				+ "]";
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public String getMiddlename() {
+		return middlename;
+	}
+	public void setMiddlename(String middlename) {
+		this.middlename = middlename;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	public String getFathersname() {
+		return fathersname;
+	}
+	public void setFathersname(String fathersname) {
+		this.fathersname = fathersname;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getAadhar() {
+		return aadhar;
+	}
+	public void setAadhar(String aadhar) {
+		this.aadhar = aadhar;
+	}
+	public String getDob() {
+		return dob;
+	}
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getAccno() {
+		return accno;
+	}
+	public void setAccno(String accno) {
+		this.accno = accno;
+	}
 	@Id 
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
